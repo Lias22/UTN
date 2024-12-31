@@ -1,0 +1,2 @@
+<source src="https://example.com/video.mp4" type="video/mp4">
+<img class="image-main" src="images/stock/project1/a1.jpg" class="pointer hover-2 width-40p" alt="Ilustración de una computadora">

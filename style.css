@@ -1,0 +1,129 @@
+main{
+    cursor: pointer;
+    position: relative;
+
+}
+.image-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 65vh;
+    box-shadow: 200px 20px 20px rgba(0, 0, 0, 0.2); /* Corregir opacidad */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    transition: transform 1s ease-in-out, clip-path 0.5s ease-in-out; /* Transiciones suaves */
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+.image-main:hover {
+    
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Deshace el corte para mostrar la imagen completa */
+    
+}
+
+.flex-column {
+    position: relative;
+    z-index: 2; /* Asegurar que el texto esté sobre la imagen */
+    color: #fff; /* Asegurar buen contraste con la imagen */
+   
+    
+}
+
+
+.image-section{
+    position: absolute;
+    top: 0;
+    right: 25%;
+    height: 65vh;
+    
+
+clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
+/*--------------------------------CARRUSEL---------------------------------------*/
+    
+}
+.carrousel-container, .carrousel-container-2 {
+    text-align: center; /* Centrar el texto y el contenido */
+    margin-top: 2rem; /* Espaciado desde el contenido superior */
+    
+}
+
+.carrousel-title {
+    font-size: 50px; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espaciado entre el título y el carrusel */
+    margin-right: 50%;
+    color: #fff; /* Color del texto, ajusta según tu diseño */
+    font-family: 'Georama', sans-serif; /* Usar la fuente ya cargada */
+}
+
+.carrousel {
+    overflow: hidden;
+    width: 50%; /* Ancho completo */
+    max-width: 100%; /* Limitar el ancho máximo */
+    margin-right: 10%; /* Centramos el carrusel horizontalmente */
+    margin-left: -2%;
+
+    
+}
+
+.wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+    justify-items: stretch;
+    animation: slide 30s linear infinite;
+    gap: 1rem; /* Espaciado entre imágenes */
+    
+}
+.wrap-2 {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+    justify-items: stretch;
+    animation: slide-2 25s linear infinite;
+    gap: 1rem; /* Espaciado entre imágenes */
+    direction: rtl;
+    
+}
+.wrap img, .wrap-2 img {
+    width: 100%; /* Adaptar el ancho de la imagen al contenedor */
+    height: 50%; /* Mantener proporciones */
+    border-radius: 20px; /* Bordes redondeados */
+    object-fit: cover; /* Asegurar que la imagen se vea bien en su contenedor */
+}
+
+
+
+.carrousel-subtitle {
+    height: 50px;
+    font-size: 50px; /* Tamaño del título */
+    margin-bottom: 1.6rem; /* Espaciado entre el título y el carrusel */
+    margin-left: 70%;
+    margin-top: -55.4%;
+    color: #fff; /* Color del texto, ajusta según tu diseño */
+    font-family: 'Georama', sans-serif; /* Usar la fuente ya cargada */
+}
+
+.carrousel-2 {
+    overflow: hidden;
+    width: 50%; /* Ancho completo */
+    max-width: 50%; /* Limitar el ancho máximo */
+    margin-left: 50%; /* Centramos el carrusel horizontalmente */
+   
+    
+}
+
+
+@keyframes slide {
+    to {
+        transform: translateX(-500%); /* Movemos la imagen a la izquierda 100% */
+    }
+}
+
+@keyframes slide-2{
+    to {
+        transform: translateX(500%); /* Movemos la imagen a la izquierda 100% */
+    }
+}
+
+    
