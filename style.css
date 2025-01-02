@@ -44,7 +44,9 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
 }
 .carrousel-container, .carrousel-container-2 {
     text-align: center; /* Centrar el texto y el contenido */
-    margin-top: 2rem; /* Espaciado desde el contenido superior */
+     /* Espaciado desde el contenido superior */
+    ;
+
     
 }
 
@@ -62,6 +64,7 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
     max-width: 100%; /* Limitar el ancho máximo */
     margin-right: 10%; /* Centramos el carrusel horizontalmente */
     margin-left: -2%;
+    border-radius: 24px;
 
     
 }
@@ -74,20 +77,22 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
     animation: slide 30s linear infinite;
     gap: 1rem; /* Espaciado entre imágenes */
     
+
 }
+
 .wrap-2 {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
     justify-items: stretch;
-    animation: slide-2 25s linear infinite;
+    animation: slide-2 30s linear infinite;
     gap: 1rem; /* Espaciado entre imágenes */
     direction: rtl;
     
 }
 .wrap img, .wrap-2 img {
     width: 100%; /* Adaptar el ancho de la imagen al contenedor */
-    height: 50%; /* Mantener proporciones */
+    height: 80%; /* Mantener proporciones */
     border-radius: 20px; /* Bordes redondeados */
     object-fit: cover; /* Asegurar que la imagen se vea bien en su contenedor */
 }
@@ -109,9 +114,23 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
     width: 50%; /* Ancho completo */
     max-width: 50%; /* Limitar el ancho máximo */
     margin-left: 50%; /* Centramos el carrusel horizontalmente */
+    border-radius: 24px;
    
     
 }
+.carrousel img, .carrousel-2 img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    filter: brightness(35%);
+    transition: all 0.3s ease-in-out;
+}
+
+.carrousel img:hover, .carrousel-2 img:hover {
+    transform: scale(0.90); /* Reduce la imagen al 90% de su tamaño original */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra suave opcional */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    filter: brightness(95%);
+}
+
 
 
 @keyframes slide {
