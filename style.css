@@ -44,8 +44,7 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
 }
 .carrousel-container, .carrousel-container-2 {
     text-align: center; /* Centrar el texto y el contenido */
-     /* Espaciado desde el contenido superior */
-    ;
+   
 
     
 }
@@ -53,10 +52,15 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
 .carrousel-title {
     font-size: 50px; /* Tamaño del título */
     margin-bottom: 1rem; /* Espaciado entre el título y el carrusel */
-    margin-right: 50%;
+    margin-right: 0%;
     color: #fff; /* Color del texto, ajusta según tu diseño */
     font-family: 'Georama', sans-serif; /* Usar la fuente ya cargada */
+    animation: slide-in 1s ease-in-out 3s infinite alternate both;
+
 }
+
+  
+
 
 .carrousel {
     overflow: hidden;
@@ -131,6 +135,197 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
     filter: brightness(95%);
 }
 
+.title, .text {
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    overflow: hidden; /* Oculta el texto fuera del contenedor */
+    border-right: 2px solid #000; /* Efecto de cursor */
+    animation: typing 4s steps(25, end) infinite, blink 0.5s step-end infinite;
+}
+
+
+
+.footer {
+    background: #1a1a1a;
+    color: #f5f5f5;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.logo-footer img {
+    max-width: 100px;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footer-link {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #00bcd4;
+}
+
+.social-media a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #00bcd4;
+}
+
+.input-email {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.btn-primary {
+    padding: 0.5rem 1rem;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #0097a7;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+
+.newsletter{
+    display: flex;
+    justify-content: end;;
+    padding-bottom: 45px;
+
+    margin-top:50px ;
+    margin-bottom: 0;
+    
+}
+
+
+
+
+
+@keyframes ripple{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(3)
+        opacity 0;
+    }
+}
+
+
+
+
+
+.btn-social:hover{
+    transform: scale(1.05);
+
+}
+
+.soc-label{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3 ease;
+    
+
+
+}
+
+
+
+.btn-social:hover .soc-label{
+    opacity: 1;
+    top: -32px;
+
+}
+
+
+.tw{
+    background-color: #1da1f2;
+    color: white;
+}
+
+
+
+.ig{
+    background-color: #e4405f;
+    color: white;
+
+}
+
+
+.ln{
+    background-color: #0077b5;
+    color: white;
+
+}
+
+
+.todofooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+/*---------------------Animaciones de KeyFrames----------------------*/
+
+
+@keyframes typing {
+  0% { width: 0; }     /* Comienza con el ancho en 0 */
+  50% { width: 100%; } /* Llega al 100% del texto */
+  100% { width: 0; }   /* Reinicia al ancho 0 para repetir */
+}
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: black; }
+}
+  
+
 
 
 @keyframes slide {
@@ -145,4 +340,48 @@ clip-path: polygon(0 0, 50% 0, 90% 100%, 0 100%);
     }
 }
 
+
+/* -------------------- Responsividad -------------------- */
+@media screen and (max-width: 768px) {
+    .image-main {
+        height: 50vh; /* Reducir altura para pantallas más pequeñas */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); /* Ajustar forma */
+    }
+
+    .carrousel-title, .carrousel-subtitle {
+        font-size: 24px; /* Reducir el tamaño del texto */
+        margin-right: 0;
+        margin-left: 0;
+        text-align: center; /* Centrar títulos */
+    }
+
+    .carrousel, .carrousel-2 {
+        width: 90%; /* Usar más ancho en pantallas pequeñas */
+        margin: 0 auto; /* Centrar el carrusel */
+    }
+
+    .wrap img, .wrap-2 img {
+        height: 70%; /* Ajustar proporciones */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-main {
+        height: 40vh; /* Aún más pequeño para pantallas muy pequeñas */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%); /* Ajuste adicional */
+    }
+
+    .carrousel-title, .carrousel-subtitle {
+        font-size: 18px; /* Texto más pequeño */
+    }
+
+    .carrousel, .carrousel-2 {
+        width: 100%; /* Ancho completo */
+        margin: 0 auto;
+    }
+
+    .wrap img, .wrap-2 img {
+        height: 60%; /* Reducir altura de imágenes */
+    }
+}
     
